@@ -1,0 +1,26 @@
+development:
+    adapter: postgresql
+    database: Eduba_development
+    pool: 5
+    timeout: 5000
+    schema_search_path: '"$user", public'
+    username: <%= ENV['DATABASE_USER_NAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+
+test:
+    adapter: postgresql
+    database: Eduba_test
+    pool: 5
+    timeout: 5000
+    schema_search_path: '"$user", public'
+    username: <%= ENV['DATABASE_USER_NAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+
+production:
+    adapter: postgresql
+    database: Eduba_production
+    pool: 5
+    timeout: 5000
+    schema_search_path: '"$user", public'
+    username: <%= ENV['DATABASE_USER_NAME'] %>
+    password: <%= ENV['DATABASE_PASSWORD'] %>
