@@ -55,3 +55,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # For Managing Enviornment Variables
 
 gem 'figaro'
+gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
+gem 'tinymce-rails'
+
+group :test do
+   gem 'cucumber', '~> 2.4.0'
+end
