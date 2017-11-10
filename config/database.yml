@@ -22,5 +22,7 @@ production:
     pool: 5
     timeout: 5000
     schema_search_path: '"$user", public'
+    host: <%= ENV['DATABASE_ENDPOINT'] %>
     username: <%= ENV['DATABASE_USER_NAME'] %>
     password: <%= ENV['DATABASE_PASSWORD'] %>
+    port: 5432
