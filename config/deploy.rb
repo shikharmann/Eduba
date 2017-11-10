@@ -1,7 +1,7 @@
 # Change these
 server '13.126.98.126', port: 22, roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com/shikharmann/Eduba.git'
+set :repo_url,        'git@github.com:shikharmann/Eduba.git'
 set :application,     'Eduba'
 set :user,            'ubuntu'
 set :puma_threads,    [4, 16]
