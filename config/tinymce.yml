@@ -1,6 +1,17 @@
 toolbar:
-  - styleselect | bold italic | undo redo
-  - image | link
+  - bullist | numlist | outdent | indent | blockquote | forecolor | backcolor | undo | redo | link | unlink | preview | hr | searchreplace | image
+  - formatselect | fontselect | fontsizeselect | bold | italic | underline | strikethrough | alignleft | aligncenter | alignjustify | alignright
 plugins:
   - image
   - link
+  - table
+  - paste
+  - importcss
+  - autolink
+  - lists
+  - wordcount
+  - colorpicker
+  - hr
+  - preview
+  - searchreplace
+  - textcolor
