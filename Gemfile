@@ -57,7 +57,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'figaro'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
-gem 'tinymce-rails'
+
+# WYSIWYG Editor
+gem 'ckeditor'
+gem 'paperclip'
 
 group :test do
    gem 'cucumber', '~> 2.4.0'

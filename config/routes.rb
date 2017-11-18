@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  root 'documents#index'
+	# Devise
   devise_for :users, ActiveAdmin::Devise.config
+  # Active Admin
   ActiveAdmin.routes(self)
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # CK Editor
+  mount Ckeditor::Engine => '/ckeditor'
+  # Application
+  root 'documents#index'
   get '/documents/:id', to: 'documents#show'
 end

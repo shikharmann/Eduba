@@ -1,13 +1,11 @@
-<%= tinymce_assets %>
 <%= semantic_form_for @document, builder: ActiveAdmin::FormBuilder, url: "/admin/documents/#{@document.id}" do |f| %>
     <%= f.inputs do %>
         <%= f.input :name %>
         <%= f.input :subtopic %>
-        <%= f.input :content, input_html:  { class: 'tinymce' } %>
+        <%= f.cktext_area :content, id: 'editor'%>
     <% end %>
     <%= f.actions do %>
         <%= f.action :submit, :as => :button, :label => 'Submit' %>
         <%= f.action :cancel, :label => 'Back', :as => :link %>
     <% end %>
 <% end %>
-<%= tinymce %>

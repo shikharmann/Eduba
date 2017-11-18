@@ -6,5 +6,5 @@ ActiveAdmin.setup do |config|
   config.comments = false
   config.batch_actions = true
   config.localize_format = :long
-  config.register_javascript 'tinymce.js'
+  config.register_javascript 'ckeditor/init.js'
 end
