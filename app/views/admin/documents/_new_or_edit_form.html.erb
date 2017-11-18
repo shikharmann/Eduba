@@ -1,5 +1,5 @@
 <%= tinymce_assets %>
-<%= semantic_form_for @document, builder: ActiveAdmin::FormBuilder, url: '/admin/documents' do |f| %>
+<%= semantic_form_for @document, builder: ActiveAdmin::FormBuilder, url: "/admin/documents/#{@document.id}" do |f| %>
     <%= f.inputs do %>
         <%= f.input :name %>
         <%= f.input :subtopic %>
