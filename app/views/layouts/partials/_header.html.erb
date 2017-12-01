@@ -1,7 +1,17 @@
 <% @courses.each do |course| %>
   <ul id=<%= "dropdown#{course.id}" %> class="dropdown-content">
     <% course.topics.each do |topic| %>
-      <li><%= link_to topic.name, document_path(topic.subtopics.first.documents.first) %></li>
+      <% subtopic = topic.subtopics.first %>
+      <% if subtopic.present? %>
+        <% document = subtopic.documents.first %>
+        <% if document.present? %>
+          <li><%= link_to topic.name, document_path(topic.subtopics.first.documents.first) %></li>
+        <% else %>
+          <li><%= link_to topic.name %></li>
+        <% end %>
+      <% else %>
+        <li><%= link_to topic.name %></li>
+      <% end %>
     <% end %>
   </ul>
 <% end %>
