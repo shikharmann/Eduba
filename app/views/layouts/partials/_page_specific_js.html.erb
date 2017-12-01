@@ -1,0 +1,8 @@
+<% if(params[:controller] == 'admin') %>
+    <%= javascript_include_tag 'active_admin' %>
+<% end %>
+
+<% if(params[:controller] == 'documents') %>
+    <%= javascript_include_tag 'layouts/partials/header' %>
+    <%= javascript_include_tag 'layouts/partials/sidenav' %>
+<% end %>

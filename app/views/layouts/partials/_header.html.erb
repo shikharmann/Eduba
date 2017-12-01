@@ -1,0 +1,18 @@
+<% @courses.each do |course| %>
+  <ul id=<%= "dropdown#{course.id}" %> class="dropdown-content">
+    <% course.topics.each do |topic| %>
+      <li><%= link_to topic.name, document_path(topic.subtopics.first.documents.first) %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<nav>
+  <div class="nav-wrapper">
+    <!-- <a href="#!" class="brand-logo">Logo</a> -->
+    <ul class="right">
+      <% @courses.each do |course| %>
+        <li><a class="dropdown-button" data-activates=<%= "dropdown#{course.id}" %>><%= course.name %><i class="material-icons right">arrow_drop_down</i></a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

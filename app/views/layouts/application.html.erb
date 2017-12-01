@@ -6,10 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
-
   <body>
-    <!-- yeild Body Here -->
-    <%= yield %>
-  </body>
+      <%= render 'layouts/partials/page_specific_css' %>
+      <%= render 'layouts/partials/page_specific_js' %>
+      <%= render 'layouts/partials/header'%>
+      <main>
+        <%= render 'layouts/partials/sidenav'%>
+        <%= yield %>
+    </body>
+      <%= render 'layouts/partials/footer'%>
+  </main>
 </html>

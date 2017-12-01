@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   # Application
   root 'documents#index'
-  get '/documents/:id', to: 'documents#show'
+  get '/documents/:id', to: 'documents#show', as: :document
 end

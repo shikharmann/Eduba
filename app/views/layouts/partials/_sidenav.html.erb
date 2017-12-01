@@ -1,0 +1,24 @@
+<ul id="nav-mobile" class="side-nav fixed" style="transform: translateX(0px);">
+  <li class="logo"><a id="logo-container" href="/" class="brand-logo">Logo</a></li>
+  <li class="search">
+    <div class="search-wrapper card">
+      <input id="search"><i class="material-icons">search</i>
+      <div class="search-results"></div>
+    </div>
+  </li>
+  <li class="no-padding">
+    <ul class="collapsible collapsible-accordion">
+      <% @subtopics.each do |subtopic| %>
+        <li class="bold"><a class="collapsible-header waves-effect waves-teal"><%= subtopic.name %></a>
+          <div class="collapsible-body">
+            <ul>
+              <% subtopic.documents.each do |document| %>
+                <li><%= link_to document.name, document_path(document.id) %></li>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </li>
+</ul>
