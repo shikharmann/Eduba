@@ -23,6 +23,7 @@ set :puma_preload_app, true
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true  # Change to false when not using ActiveRecord
 set :linked_files, %w{config/application.yml}
+set :rails_env, :production
 
 ## Defaults:
 # set :scm,           :git
@@ -75,7 +76,7 @@ namespace :deploy do
   end
 
   before :starting,     :check_revision
-  # after  :finishing,    :compile_assets
+  after  :finishing,    :compile_assets
   after  :finishing,    :cleanup
   after  :finishing,    :restart
 end
