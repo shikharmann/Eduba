@@ -1,5 +1,5 @@
 ActiveAdmin.register Document do
-  permit_params :name, :subtopic_id, :content
+  permit_params :name, :subtopic_id, :content, :content_path
   form partial: 'new_or_edit_form'
   menu priority: 4
   index do
