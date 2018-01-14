@@ -62,9 +62,9 @@ gem 'devise'
 gem 'ckeditor'
 gem 'paperclip'
 
-group :test do
-   gem 'cucumber', '~> 2.4.0'
-end
+# group :test do
+#    gem 'cucumber', '~> 2.4.0'
+# end
 
 group :development do
     gem 'capistrano',         require: false
