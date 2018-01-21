@@ -5,11 +5,11 @@ class AwsServices::DocumentStorage
   def initialize(doc)
     @doc = doc
     @s3 = Aws::S3::Resource.new
-    @obj = s3.bucket(BUCKET_NAME).object(storage_key)
+    @obj = @s3.bucket(BUCKET_NAME).object(storage_key)
   end
 
   def write(file)
-    @obj.upload_file(file)
+    @obj.upload_file(file.tempfile)
   end
 
 
@@ -20,7 +20,7 @@ class AwsServices::DocumentStorage
   private
 
   def storage_key
-    "materials/#{@doc.id}/#{@doc.cloud_name}.html"
+    "materials/#{Rails.env}/#{@doc.id}/#{@doc.cloud_name}.html"
   end
 
 end
