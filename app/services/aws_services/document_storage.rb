@@ -12,6 +12,9 @@ class AwsServices::DocumentStorage
     @obj.upload_file(file.tempfile)
   end
 
+  def remove
+    @obj.delete
+  end
 
   def public_url
     @obj.public_url

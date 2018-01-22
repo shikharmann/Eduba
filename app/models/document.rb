@@ -8,6 +8,7 @@ class Document < ApplicationRecord
     validates_presence_of :subtopic
 
   after_create :generate_and_save_file_name
+  before_destroy :remove_file_from_cloud
 
   def get_file_name
     generate_and_save_file_name if !file_name.present?
@@ -26,6 +27,10 @@ class Document < ApplicationRecord
 
   def generate_file_name
     Digest::SHA256.hexdigest("#{self.id}")+'.html'
+  end
+
+  def remove_file_from_cloud
+    AwsServices::DocumentStorage.new(self).remove
   end
 
 end
