@@ -20,7 +20,7 @@ class AwsServices::DocumentStorage
   private
 
   def storage_key
-    "materials/#{Rails.env}/#{@doc.id}/#{@doc.cloud_name}.html"
+    "materials/#{Rails.env}/#{@doc.id}/#{@doc.get_file_name}"
   end
 
 end
