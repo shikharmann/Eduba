@@ -2,8 +2,8 @@
     <%= f.inputs do %>
         <%= f.input :name %>
         <%= f.input :subtopic %>
-        <%= f.input :content_path %>
-        <%= f.cktext_area :content, id: 'editor'%>
+        <%= f.label :document_html_file %>
+        <%= f.file_field :html_file %>
     <% end %>
     <%= f.actions do %>
         <%= f.action :submit, :as => :button, :label => 'Submit' %>

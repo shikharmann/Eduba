@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180114114320) do
+ActiveRecord::Schema.define(version: 20180122084839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,12 +41,11 @@ ActiveRecord::Schema.define(version: 20180114114320) do
   end
 
   create_table "documents", force: :cascade do |t|
-    t.string   "name",         null: false
-    t.integer  "subtopic_id",  null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.text     "content",      null: false
-    t.string   "content_path"
+    t.string   "name",        null: false
+    t.integer  "subtopic_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "file_name"
     t.index ["subtopic_id"], name: "index_documents_on_subtopic_id", using: :btree
   end
 
