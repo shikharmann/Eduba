@@ -1,0 +1,50 @@
+<head>
+  <title>Eduba</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">eduba</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li><a target="_blank" href="about_us">About Us</a></li>
+      <li><a target="_blank" href="/contact_us">Contact Us</a></li>
+      <li><a target="_blank" href="/admin">Login</a></li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+<h4> Welcome to Eduba!! </h4>
+<br>
+</body>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Eduba</h5>
+        <p class="grey-text text-lighten-4">Some footer content for Eduba</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Links</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="/terms_of_service">Terms of Service</a></li>
+          <li><a class="grey-text text-lighten-3" href="/privacy_policy">Privacy Policy</a></li>
+          <li><a class="grey-text text-lighten-3" href="/refund_policy">Refund Policy</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2018 Copyright
+    </div>
+  </div>
+</footer>

@@ -6,6 +6,13 @@ Rails.application.routes.draw do
   # CK Editor
   mount Ckeditor::Engine => '/ckeditor'
   # Application
-  root 'documents#index'
+  root 'home_pages#index'
+  get '/about_us', to: 'home_pages#about_us'
+  get '/contact_us', to: 'home_pages#contact_us'
+  get '/terms_of_service', to: 'home_pages#terms_of_service'
+  get '/privacy_policy', to: 'home_pages#privacy_policy'
+  get '/refund_policy', to: 'home_pages#refund_policy'
+
+  #document routes
   get '/documents/:id', to: 'documents#show', as: :document
 end

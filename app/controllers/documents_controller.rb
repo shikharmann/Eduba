@@ -1,10 +1,6 @@
 class DocumentsController < ApplicationController
 
-	before_action :set_variables, only: :show
-
-  def index
-    render layout: false
-  end
+  before_action :set_variables, only: :show
 
   def show
   end
