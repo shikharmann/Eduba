@@ -1,5 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Eduba</title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -8,43 +9,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Eduba</title>
 </head>
 <body>
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">eduba</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><a target="_blank" href="about_us">About Us</a></li>
-      <li><a target="_blank" href="/contact_us">Contact Us</a></li>
-      <li><a target="_blank" href="/admin">Login</a></li>
-    </ul>
-  </div>
-</nav>
-<br>
-<br>
-<h4> Welcome to Eduba!! </h4>
-<br>
-</body>
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Eduba</h5>
-        <p class="grey-text text-lighten-4">Some footer content for Eduba</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
-        <ul>
-          <li><a class="grey-text text-lighten-3" href="/terms_of_service">Terms of Service</a></li>
-          <li><a class="grey-text text-lighten-3" href="/privacy_policy">Privacy Policy</a></li>
-          <li><a class="grey-text text-lighten-3" href="/refund_policy">Refund Policy</a></li>
-        </ul>
-      </div>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo">
+            <%= image_tag("eduba_logo.png") %>
+        </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/admin/login">Login</a></li>
+        <li><a href="/admin/sign_up">Signup</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
-  </div>
-  <div class="footer-copyright">
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
     <div class="container">
-    © 2018 Copyright
+      <br><br>
+      <h1 class="header center orange-text">Never Make Notes Again</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">The new way for preparing for UPSC IAS exam</h5>
+      </div>
+      <div class="row center">
+        <a href="/admin" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+      </div>
+      <br><br>
+
     </div>
   </div>
-</footer>
+
+
+  <div class="container">
+    <div class="section">
+        <%= image_tag("laptop_full.png") %>
+    </div>
+    <br><br>
+  </div>
+
+  <footer class="page-footer orange">
+    <div class="container" style="margin-left: 0px; margin-right: 0px;">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About Eduba</h5>
+          <p class="grey-text text-lighten-4">Born out of the idea that quality learning should be affordable as well as accessible to all, Eduba is an e-learning platform to prepare for various competitive exams. Starting with UPSC for now.</p>
+        </div>
+        <div class="col l6 s12" style="margin-left: 0px; padding-left: 100px;">
+          <h5 class="white-text">Important Links</h5>
+          <ul>
+            <li><a class="white-text" href="/contact_us">Contact Us</a></li>
+            <li><a class="white-text" href="/terms_of_service">Terms of Use</a></li>
+            <li><a class="white-text" href="/privacy_policy">Privacy Policy</a></li>
+            <li><a class="white-text" href="/refund_policy">Cancellation and Refund</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        Copyright © 2018 The Eduba Group. All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  </body>
+</html>

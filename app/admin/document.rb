@@ -12,6 +12,12 @@ ActiveAdmin.register Document do
   end
 
   controller do
+    before_filter :admin_filter
+
+    def admin_filter
+      raise ActionController::RoutingError.new('Not Found') if current_user.nil?
+      redirect_to after_sign_in_path_for(current_user) unless current_user.ADMIN?
+    end
 
     def update
       doc = Document.find_by_id(params[:id])

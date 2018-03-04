@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-	# Devise
+
+  # Devise
   devise_for :users, ActiveAdmin::Devise.config
   # Active Admin
   ActiveAdmin.routes(self)
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   get '/terms_of_service', to: 'home_pages#terms_of_service'
   get '/privacy_policy', to: 'home_pages#privacy_policy'
   get '/refund_policy', to: 'home_pages#refund_policy'
+  get '/payments', to: 'payments#index'
 
   #document routes
   get '/documents/:id', to: 'documents#show', as: :document
