@@ -1,11 +1,12 @@
 ActiveAdmin.register Document do
-  permit_params :name, :subtopic_id
+  permit_params :name, :subtopic_id, :free_content
   form partial: 'new_or_edit_form'
   menu priority: 4
   index do
     column :id
     column :name
     column :subtopic
+    column :free_content
     actions defaults: true do |document|
       link_to('Preview',"/documents/#{document.id}", :target => "_blank")
     end
@@ -25,7 +26,7 @@ ActiveAdmin.register Document do
       if doc.present?
         begin
           ActiveRecord::Base.transaction do
-            doc.update(params.require(:document).permit(:name, :subtopic_id))
+            doc.update(params.require(:document).permit(:name, :subtopic_id, :free_content))
             if attached_file.present? && attached_file.content_type=="text/html"
               AwsServices::DocumentStorage.new(doc).write(attached_file)
             end
