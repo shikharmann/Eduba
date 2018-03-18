@@ -39,7 +39,9 @@
         <h5 class="header col s12 light">The new way for preparing for UPSC IAS exam</h5>
       </div>
       <div class="row center">
-        <a href="/admin" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
+        <% first_free_content = Document.where(free_content: true).first %>
+        <% get_started_url = first_free_content.present? ? "/free_content/#{first_free_content.id}" : '/admin/login'%>
+        <a href= <%= get_started_url %> id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
       </div>
       <br><br>
 

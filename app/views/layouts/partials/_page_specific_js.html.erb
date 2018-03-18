@@ -2,7 +2,7 @@
     <%= javascript_include_tag 'active_admin' %>
 <% end %>
 
-<% if(params[:controller] == 'documents') %>
+<% if(params[:controller] == 'documents' || params[:controller] == 'free_contents') %>
     <%= javascript_include_tag 'layouts/partials/header' %>
     <%= javascript_include_tag 'layouts/partials/sidenav' %>
 <% end %>

@@ -1,11 +1,11 @@
 class Document < ApplicationRecord
-	# Associations
-	belongs_to :subtopic
-	has_one :topic, through: :subtopic
-	has_one :course, through: :subtopic
-	# Validations
-	validates_presence_of :name
-    validates_presence_of :subtopic
+  # Associations
+  belongs_to :subtopic
+  has_one :topic, through: :subtopic
+  has_one :course, through: :subtopic
+  # Validations
+  validates_presence_of :name
+  validates_presence_of :subtopic
 
   after_create :generate_and_save_file_name
   before_destroy :remove_file_from_cloud
